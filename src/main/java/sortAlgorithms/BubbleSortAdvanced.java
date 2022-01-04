@@ -13,7 +13,10 @@ import util.Measurement;
 public class BubbleSortAdvanced implements Sorter {
     @Override
     public Measurement sort(int[] array) {
+        Runtime runtime = Runtime.getRuntime();
+        long usedMemoryBefore = runtime.totalMemory() - runtime.freeMemory();
         long time = System.currentTimeMillis();
+
         boolean sorted = false;
         while (!sorted) {
             sorted = true;
@@ -28,7 +31,10 @@ public class BubbleSortAdvanced implements Sorter {
                 }
             }
         }
+
         measure.setTime(System.currentTimeMillis() - time);
+        measure.setMemory((runtime.totalMemory() - runtime.freeMemory())-usedMemoryBefore);
+
         return measure;
     }
 }

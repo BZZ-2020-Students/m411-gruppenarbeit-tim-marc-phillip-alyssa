@@ -26,7 +26,7 @@ public class Measurement {
     /**
      * The amount of memory the sort used
      */
-    private int memory;
+    private long memory;
 
     /**
      * The name of the sorter
@@ -91,11 +91,11 @@ public class Measurement {
         this.time = time;
     }
 
-    public int getMemory() {
+    public long getMemory() {
         return memory;
     }
 
-    public void setMemory(int memory) {
+    public void setMemory(long memory) {
         this.memory = memory;
     }
 
