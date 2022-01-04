@@ -29,6 +29,16 @@ public class Measurement {
     private long memory;
 
     /**
+     * The name of the sorter
+     */
+    private String sorterName;
+
+    /**
+     * The amount of ints sorted
+     */
+    private int sampleSize;
+
+    /**
      * Default Constructor
      */
     public Measurement() {
@@ -87,6 +97,22 @@ public class Measurement {
 
     public void setMemory(long memory) {
         this.memory = memory;
+    }
+
+    public String getSorterName() {
+        return sorterName;
+    }
+
+    public void setSorterName(String sorterName) {
+        this.sorterName = sorterName;
+    }
+
+    public int getSampleSize() {
+        return sampleSize;
+    }
+
+    public void setSampleSize(int sampleSize) {
+        this.sampleSize = sampleSize;
     }
 
     @Override

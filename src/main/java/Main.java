@@ -1,8 +1,7 @@
-import sortAlgorithms.BubbleSort;
-import sortAlgorithms.BubbleSortAdvanced;
-import sortAlgorithms.Quicksort;
-import sortAlgorithms.TreeSort;
+import sortAlgorithms.*;
 import util.Measurement;
+
+import java.util.ArrayList;
 
 public class Main {
     public static void main(String[] args) {
@@ -25,5 +24,14 @@ public class Main {
         TreeSort treeSort = new TreeSort();
         measure = treeSort.sort(array);
         System.out.println("measure treesort = " + measure);
+    }
+
+    private void measureSorts() {
+        var sorters = new ArrayList<Sorter>();
+
+        sorters.add(new BubbleSort());
+        sorters.add(new BubbleSortAdvanced());
+        sorters.add(new Quicksort());
+        sorters.add(new Quicksort());
     }
 }
