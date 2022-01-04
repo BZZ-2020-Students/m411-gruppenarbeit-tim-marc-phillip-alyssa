@@ -6,9 +6,9 @@ public class Measurement {
     private long time;
     private int memory;
 
-    public Measurement(int iterations, int comarisons, long time, int memory) {
+    public Measurement(int iterations, int comparisons, long time, int memory) {
         this.iterations = iterations;
-        this.comparisons = comarisons;
+        this.comparisons = comparisons;
         this.time = time;
         this.memory = memory;
     }
