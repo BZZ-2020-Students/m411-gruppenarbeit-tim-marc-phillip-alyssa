@@ -50,12 +50,20 @@ public class Measurement {
         this.memory = memory;
     }
 
+    public void increaseIterations() {
+        this.iterations++;
+    }
+
     public int getIterations() {
         return iterations;
     }
 
     public void setIterations(int iterations) {
         this.iterations = iterations;
+    }
+
+    public void increaseComparisons() {
+        this.comparisons++;
     }
 
     public int getComparisons() {
@@ -80,5 +88,15 @@ public class Measurement {
 
     public void setMemory(int memory) {
         this.memory = memory;
+    }
+
+    @Override
+    public String toString() {
+        return "Measurement{" +
+                "iterations=" + iterations +
+                ", comparisons=" + comparisons +
+                ", time=" + time + "ms" +
+                ", memory=" + memory +
+                '}';
     }
 }
