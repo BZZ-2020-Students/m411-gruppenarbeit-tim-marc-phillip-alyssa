@@ -1,3 +1,5 @@
+package util;
+
 public class Measurement {
     private int iterations;
     private int comparisons;
