@@ -4,9 +4,8 @@ package util;
  * Dataclass to track the performance of sorting algorithms
  *
  * @author Marc Andri Fuchs
- * @since 04-01-2022
  * @version 1.0
- *
+ * @since 04-01-2022
  */
 public class Measurement {
     /**
@@ -38,10 +37,10 @@ public class Measurement {
     /**
      * Constructor with all params
      *
-     * @param iterations The amount of iterations the sort took
+     * @param iterations  The amount of iterations the sort took
      * @param comparisons The amount of comparisons made in the sort
-     * @param time The time the sort took
-     * @param memory The amount of memory the sort used
+     * @param time        The time the sort took
+     * @param memory      The amount of memory the sort used
      */
     public Measurement(int iterations, int comparisons, long time, int memory) {
         this.iterations = iterations;

@@ -2,6 +2,13 @@ package sortAlgorithms;
 
 import util.Measurement;
 
+/**
+ * TreeSort implementation to sort an array of ints
+ *
+ * @author Tim Irmler
+ * @version 1.0
+ * @since 04-01-2022
+ */
 public class TreeSort implements Sorter {
     Node root;
     int index = 0;

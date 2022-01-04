@@ -2,6 +2,14 @@ package sortAlgorithms;
 
 import util.Measurement;
 
+/**
+ * Bubblesort implementation to sort an array of ints
+ * This implementation is done with a while loop and a boolean flag, which should run faster with bigger amounts of datas
+ *
+ * @author Tim Irmler
+ * @version 1.0
+ * @since 04-01-2022
+ */
 public class BubbleSortAdvanced implements Sorter {
     @Override
     public Measurement sort(int[] array) {
