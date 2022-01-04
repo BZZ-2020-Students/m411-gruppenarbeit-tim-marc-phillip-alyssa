@@ -24,9 +24,9 @@ public class Export {
         assert file != null;
         FileWriter writer = new FileWriter(file);
 
-        writer.append("iterations,comparisons,time,memory\n");
+        writer.append("sortername,samplesize,iterations,comparisons,time,memory\n");
         for (Measurement m : data) {
-            writer.append(String.format("%s,%s,%s,%s\n", m.getIterations(), m.getComparisons(), m.getTime(), m.getMemory()));
+            writer.append(String.format("%s,%s,%s,%s,%s,%s\n", m.getSorterName(), m.getSampleSize(), m.getIterations(), m.getComparisons(), m.getTime(), m.getMemory()));
             writer.flush();
         }
         writer.close();
