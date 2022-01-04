@@ -1,9 +1,21 @@
 package sortAlgorithms;
 
+/**
+ * Dataclass to track the performance of sorting algorithms
+ *
+ * @author Phillip William Jerebic
+ * @since 04-01-2022
+ * @version 1.0
+ *
+ */
 import util.Measurement;
+
 
 // TODO: 04.01.2022 get memory usage
 public class Quicksort implements Sorter {
+    /**
+     * Override Measurement
+     */
     @Override
     public Measurement sort(int[] array) {
         long time = System.currentTimeMillis();
