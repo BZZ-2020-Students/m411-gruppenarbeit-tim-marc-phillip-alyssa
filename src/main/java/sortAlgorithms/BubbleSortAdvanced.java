@@ -13,7 +13,6 @@ public class BubbleSortAdvanced implements Sorter {
                 measure.increaseIterations();
                 measure.increaseComparisons();
                 if (array[j] > array[j + 1]) {
-
                     int temp = array[j];
                     array[j] = array[j + 1];
                     array[j + 1] = temp;
