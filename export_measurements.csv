@@ -1,2 +1,13 @@
-iterations,comparisons,time,memory
-1244,34,343,2525
+sortername,samplesize,iterations,comparisons,time,memory
+BubbleSort,1000,997002,997002,13,0
+BubbleSortAdvanced,1000,999000,999000,11,0
+Quicksort,1000,1857,8561,1,0
+TreeSort,1000,157376,311820,4,0
+BubbleSort,100,9702,9702,1,0
+BubbleSortAdvanced,100,6435,6435,0,0
+Quicksort,100,167,795,0,0
+TreeSort,100,1974,3647,0,0
+BubbleSort,10,72,72,0,0
+BubbleSortAdvanced,10,36,36,0,0
+Quicksort,10,13,46,0,0
+TreeSort,10,68,105,0,0

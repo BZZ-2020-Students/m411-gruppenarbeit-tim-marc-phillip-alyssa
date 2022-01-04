@@ -13,6 +13,8 @@ import util.Measurement;
 public class BubbleSort implements Sorter {
     @Override
     public Measurement sort(int[] array) {
+        var measure = new Measurement();
+
         Runtime runtime = Runtime.getRuntime();
         long usedMemoryBefore = runtime.totalMemory() - runtime.freeMemory();
         long time = System.currentTimeMillis();

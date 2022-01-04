@@ -44,6 +44,18 @@ public class Measurement {
     public Measurement() {
     }
 
+    @Override
+    public String toString() {
+        return "Measurement{" +
+                "iterations=" + iterations +
+                ", comparisons=" + comparisons +
+                ", time=" + time +
+                ", memory=" + memory +
+                ", sorterName='" + sorterName + '\'' +
+                ", sampleSize=" + sampleSize +
+                '}';
+    }
+
     /**
      * Constructor with all params
      *
@@ -115,13 +127,4 @@ public class Measurement {
         this.sampleSize = sampleSize;
     }
 
-    @Override
-    public String toString() {
-        return "Measurement{" +
-                "iterations=" + iterations +
-                ", comparisons=" + comparisons +
-                ", time=" + time + "ms" +
-                ", memory=" + memory +
-                '}';
-    }
 }

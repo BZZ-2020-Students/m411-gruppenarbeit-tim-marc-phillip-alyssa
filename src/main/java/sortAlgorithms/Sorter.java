@@ -10,7 +10,5 @@ import util.Measurement;
  * @since 04-01-2022
  */
 public interface Sorter {
-    Measurement measure = new Measurement();
-
     Measurement sort(int[] array);
 }

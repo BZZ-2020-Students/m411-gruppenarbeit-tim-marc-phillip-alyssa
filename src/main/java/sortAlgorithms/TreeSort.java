@@ -12,6 +12,8 @@ import util.Measurement;
 public class TreeSort implements Sorter {
     Node root;
     int index = 0;
+    Measurement measure = new Measurement();
+
 
     public TreeSort() {
         root = null;
@@ -58,6 +60,7 @@ public class TreeSort implements Sorter {
 
     @Override
     public Measurement sort(int[] array) {
+
         Runtime runtime = Runtime.getRuntime();
         long usedMemoryBefore = runtime.totalMemory() - runtime.freeMemory();
         long time = System.currentTimeMillis();

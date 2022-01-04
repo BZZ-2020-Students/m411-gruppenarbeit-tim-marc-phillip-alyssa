@@ -4,20 +4,22 @@ package sortAlgorithms;
  * Dataclass to track the performance of sorting algorithms
  *
  * @author Phillip William Jerebic
- * @since 04-01-2022
  * @version 1.0
- *
+ * @since 04-01-2022
  */
+
 import util.Measurement;
 
 
 // TODO: 04.01.2022 get memory usage
 public class Quicksort implements Sorter {
+    Measurement measure = new Measurement();
     /**
      * Override Measurement
      */
     @Override
     public Measurement sort(int[] array) {
+
         Runtime runtime = Runtime.getRuntime();
         long usedMemoryBefore = runtime.totalMemory() - runtime.freeMemory();
         long time = System.currentTimeMillis();
@@ -25,7 +27,7 @@ public class Quicksort implements Sorter {
         sort(array, 0, array.length - 1);
 
         measure.setTime(System.currentTimeMillis() - time);
-        measure.setMemory((runtime.totalMemory() - runtime.freeMemory())-usedMemoryBefore);
+        measure.setMemory((runtime.totalMemory() - runtime.freeMemory()) - usedMemoryBefore);
 
         return measure;
     }
