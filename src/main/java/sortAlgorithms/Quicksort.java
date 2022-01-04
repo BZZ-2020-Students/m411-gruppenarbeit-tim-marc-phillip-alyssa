@@ -18,9 +18,14 @@ public class Quicksort implements Sorter {
      */
     @Override
     public Measurement sort(int[] array) {
+        Runtime runtime = Runtime.getRuntime();
+        long usedMemoryBefore = runtime.totalMemory() - runtime.freeMemory();
         long time = System.currentTimeMillis();
+
         sort(array, 0, array.length - 1);
+
         measure.setTime(System.currentTimeMillis() - time);
+        measure.setMemory((runtime.totalMemory() - runtime.freeMemory())-usedMemoryBefore);
 
         return measure;
     }

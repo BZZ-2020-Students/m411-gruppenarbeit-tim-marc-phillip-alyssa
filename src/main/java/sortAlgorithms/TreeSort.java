@@ -22,8 +22,6 @@ public class TreeSort implements Sorter {
     }
 
     private Node insertRec(Node root, int key) {
-        /* If the tree is empty,
-        return a new node */
         measure.increaseIterations();
         measure.increaseComparisons();
         if (root == null) {
@@ -60,10 +58,16 @@ public class TreeSort implements Sorter {
 
     @Override
     public Measurement sort(int[] array) {
+        Runtime runtime = Runtime.getRuntime();
+        long usedMemoryBefore = runtime.totalMemory() - runtime.freeMemory();
         long time = System.currentTimeMillis();
+
         insertEverything(array);
         putInOrder(this.root, array);
+
         measure.setTime(System.currentTimeMillis() - time);
+        measure.setMemory((runtime.totalMemory() - runtime.freeMemory())-usedMemoryBefore);
+
         return measure;
     }
 
