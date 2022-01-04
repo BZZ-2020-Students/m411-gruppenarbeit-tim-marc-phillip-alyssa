@@ -1,6 +1,7 @@
 import sortAlgorithms.BubbleSort;
 import sortAlgorithms.BubbleSortAdvanced;
 import sortAlgorithms.Quicksort;
+import sortAlgorithms.TreeSort;
 import util.Measurement;
 
 public class Main {
@@ -20,5 +21,9 @@ public class Main {
         measure = bubbleSortAdvanced.sort(array);
         System.out.println("measure bubblesort advanced = " + measure);
 
+        array = new int[]{4, 1, 2, 8, 6, 5, 7, 12};
+        TreeSort treeSort = new TreeSort();
+        measure = treeSort.sort(array);
+        System.out.println("measure treesort = " + measure);
     }
 }
