@@ -1,14 +1,51 @@
 package util;
 
+/**
+ * Dataclass to track the performance of sorting algorithms
+ *
+ * @author Marc Andri Fuchs
+ * @since 04-01-2022
+ * @version 1.0
+ *
+ */
 public class Measurement {
+    /**
+     * The amount of iterations the sort took
+     */
     private int iterations;
+
+    /**
+     * The amount of comparisons made in the sort
+     */
     private int comparisons;
+
+    /**
+     * The time the sort took
+     */
     private long time;
+
+    /**
+     * The amount of memory the sort used
+     */
     private int memory;
 
-    public Measurement(int iterations, int comarisons, long time, int memory) {
+    /**
+     * Default Constructor
+     */
+    public Measurement() {
+    }
+
+    /**
+     * Constructor with all params
+     *
+     * @param iterations The amount of iterations the sort took
+     * @param comparisons The amount of comparisons made in the sort
+     * @param time The time the sort took
+     * @param memory The amount of memory the sort used
+     */
+    public Measurement(int iterations, int comparisons, long time, int memory) {
         this.iterations = iterations;
-        this.comparisons = comarisons;
+        this.comparisons = comparisons;
         this.time = time;
         this.memory = memory;
     }
