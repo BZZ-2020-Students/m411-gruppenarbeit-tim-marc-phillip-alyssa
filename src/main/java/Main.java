@@ -6,37 +6,26 @@ import util.Measurement;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Scanner;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class Main {
     public static void main(String[] args) {
-//        int[] array = {4, 1, 2, 8, 6, 5, 7, 12};
-//        Quicksort quicksort = new Quicksort();
-//        Measurement measure = quicksort.sort(array);
-//        System.out.println("measure quicksort = " + measure);
-//
-//        array = new int[]{4, 1, 2, 8, 6, 5, 7, 12};
-//        BubbleSort bubbleSort = new BubbleSort();
-//        measure = bubbleSort.sort(array);
-//        System.out.println("measure bubblesort = " + measure);
-//
-//        array = new int[]{4, 1, 2, 8, 6, 5, 7, 12};
-//        BubbleSortAdvanced bubbleSortAdvanced = new BubbleSortAdvanced();
-//        measure = bubbleSortAdvanced.sort(array);
-//        System.out.println("measure bubblesort advanced = " + measure);
-//
-//        array = new int[]{4, 1, 2, 8, 6, 5, 7, 12};
-//        TreeSort treeSort = new TreeSort();
-//        measure = treeSort.sort(array);
-//        System.out.println("measure treesort = " + measure);
-
         System.out.print("Please ensure that all input samples are in the \"resources/inputfiles\" folder (enter 'y' to continue) > ");
+
+        Scanner sc = new Scanner(System.in);
+        String input = sc.nextLine();
+        if (!input.equalsIgnoreCase("y")) {
+            System.out.println("Programm will stop...");
+            return;
+        }
+        sc.close();
 
         var main = new Main();
 
         var inputsamples = InputReader.getFileContent();
         var measurements = main.measureSorts(inputsamples);
-
-        System.out.println(measurements);
 
         var export = new Export();
 
@@ -63,12 +52,15 @@ public class Main {
 
                 measurements.add(m);
 
-                System.out.println(m);
+                System.out.print ("Sort completed: \n");
+                System.out.printf("     - Sample Size : %d\n", m.getSampleSize());
+                System.out.printf("     - Sorter      : %s\n", m.getSorterName());
+                System.out.printf("     - Time        : %d\n", m.getTime());
+                System.out.printf("     - Memory Usage: %d\n", m.getMemory());
+                System.out.printf("     - Iterations  : %d\n", m.getIterations());
+                System.out.printf("     - Comparisons : %d\n", m.getComparisons());
             }
-
         }
-
-        System.out.println(measurements);
 
         return measurements;
     }

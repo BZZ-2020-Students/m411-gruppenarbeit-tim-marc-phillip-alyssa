@@ -31,10 +31,6 @@ public class Export {
         FileWriter writer = new FileWriter(file);
 
         writer.append(",sortername,samplesize,iterations,comparisons,time,memory\n");
-//        for (Measurement m : data) {
-//            writer.append(String.format("%s,%s,%s,%s,%s ns,%s\n", m.getSorterName(), m.getSampleSize(), m.getIterations(), m.getComparisons(), String.format("%,d", m.getTime()).replace(",", "'"), m.getMemory()));
-//            writer.flush();
-//        }
 
         int[] samplesizes = {10, 100, 1000};
 
@@ -44,13 +40,18 @@ public class Export {
                     .forEach(m -> {
                         try {
                             writer.append(String.format(",%s,%s,%s,%s,%s ns,%s\n", m.getSorterName(), m.getSampleSize(), m.getIterations(), m.getComparisons(), String.format("%,d", m.getTime()).replace(",", "'"), m.getMemory()));
+                            writer.flush();
                         } catch (IOException e) {
                             e.printStackTrace();
                         }
+
                     });
         }
 
         writer.close();
 
+        System.out.println("\n");
+
+        System.out.println("Completed writing file: " + file.getAbsolutePath());
     }
 }
