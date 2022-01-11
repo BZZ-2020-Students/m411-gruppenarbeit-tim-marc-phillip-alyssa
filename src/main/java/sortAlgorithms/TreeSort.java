@@ -1,6 +1,7 @@
 package sortAlgorithms;
 
 import util.Measurement;
+import util.Time;
 
 /**
  * TreeSort implementation to sort an array of ints
@@ -63,12 +64,12 @@ public class TreeSort implements Sorter {
 
         Runtime runtime = Runtime.getRuntime();
         long usedMemoryBefore = runtime.totalMemory() - runtime.freeMemory();
-        long time = System.currentTimeMillis();
+        long time = Time.currentTime();
 
         insertEverything(array);
         putInOrder(this.root, array);
 
-        measure.setTime(System.currentTimeMillis() - time);
+        measure.setTime(Time.calculateElapsed(time));
         measure.setMemory((runtime.totalMemory() - runtime.freeMemory())-usedMemoryBefore);
 
         return measure;

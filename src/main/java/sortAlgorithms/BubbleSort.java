@@ -1,6 +1,10 @@
 package sortAlgorithms;
 
 import util.Measurement;
+import util.Time;
+
+import java.time.Instant;
+import java.time.temporal.ChronoUnit;
 
 /**
  * Bubble Sort Algorithmus
@@ -17,7 +21,7 @@ public class BubbleSort implements Sorter {
 
         Runtime runtime = Runtime.getRuntime();
         long usedMemoryBefore = runtime.totalMemory() - runtime.freeMemory();
-        long time = System.currentTimeMillis();
+        long time = Time.currentTime();
 
         for (int i = 0; i < array.length - 1; i++) {
             for (int j = 0; j < array.length - 2; j++) {
@@ -31,7 +35,7 @@ public class BubbleSort implements Sorter {
             }
         }
 
-        measure.setTime(System.currentTimeMillis() - time);
+        measure.setTime(Time.calculateElapsed(time));
         measure.setMemory((runtime.totalMemory() - runtime.freeMemory())-usedMemoryBefore);
 
         return measure;

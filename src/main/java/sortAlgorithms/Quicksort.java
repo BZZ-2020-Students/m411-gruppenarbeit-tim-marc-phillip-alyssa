@@ -9,6 +9,7 @@ package sortAlgorithms;
  */
 
 import util.Measurement;
+import util.Time;
 
 
 // TODO: 04.01.2022 get memory usage
@@ -22,11 +23,11 @@ public class Quicksort implements Sorter {
 
         Runtime runtime = Runtime.getRuntime();
         long usedMemoryBefore = runtime.totalMemory() - runtime.freeMemory();
-        long time = System.currentTimeMillis();
+        long time = Time.currentTime();
 
         sort(array, 0, array.length - 1);
 
-        measure.setTime(System.currentTimeMillis() - time);
+        measure.setTime(Time.calculateElapsed(time));
         measure.setMemory((runtime.totalMemory() - runtime.freeMemory()) - usedMemoryBefore);
 
         return measure;

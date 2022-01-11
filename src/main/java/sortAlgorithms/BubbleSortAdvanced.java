@@ -1,6 +1,7 @@
 package sortAlgorithms;
 
 import util.Measurement;
+import util.Time;
 
 /**
  * Bubblesort implementation to sort an array of ints
@@ -17,7 +18,7 @@ public class BubbleSortAdvanced implements Sorter {
 
         Runtime runtime = Runtime.getRuntime();
         long usedMemoryBefore = runtime.totalMemory() - runtime.freeMemory();
-        long time = System.currentTimeMillis();
+        long time = Time.currentTime();
 
         boolean sorted = false;
         while (!sorted) {
@@ -34,7 +35,7 @@ public class BubbleSortAdvanced implements Sorter {
             }
         }
 
-        measure.setTime(System.currentTimeMillis() - time);
+        measure.setTime(Time.calculateElapsed(time));
         measure.setMemory((runtime.totalMemory() - runtime.freeMemory()) - usedMemoryBefore);
 
         return measure;
