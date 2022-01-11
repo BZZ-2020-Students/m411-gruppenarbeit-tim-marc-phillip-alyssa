@@ -1,7 +1,7 @@
 package util;
 
 /**
- * Dataclass for exporting statistics
+ * Dataclass for exporting statistics into a .csv file
  *
  * @author Phillip Jerebic
  * @version 1.0
