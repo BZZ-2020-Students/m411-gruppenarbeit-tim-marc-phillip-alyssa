@@ -32,7 +32,7 @@ public class Export {
 
         writer.append(",sortername,samplesize,iterations,comparisons,time,memory\n");
 
-        int[] samplesizes = {10, 100, 1000};
+        int[] samplesizes = data.stream().mapToInt(Measurement::getSampleSize).distinct().toArray();
 
         for (int ss : samplesizes) {
             writer.append("Samplesize:").append(String.valueOf(ss)).append("\n");
@@ -44,7 +44,6 @@ public class Export {
                         } catch (IOException e) {
                             e.printStackTrace();
                         }
-
                     });
         }
 

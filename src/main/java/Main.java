@@ -7,8 +7,6 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Scanner;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 public class Main {
     public static void main(String[] args) {
@@ -39,10 +37,15 @@ public class Main {
     private ArrayList<Measurement> measureSorts(int[][] inputsamples) {
         var measurements = new ArrayList<Measurement>();
 
+        int iter = 0;
+        int totalIters = inputsamples.length * 4;
+
         for (int[] is : inputsamples) {
             var sorters = createSorters();
 
             for (var sorter : sorters) {
+                iter++;
+                printProgress(iter, totalIters);
                 var isCopy = Arrays.copyOf(is, is.length);
 
                 var m = sorter.sort(isCopy);
@@ -51,18 +54,22 @@ public class Main {
                 m.setSampleSize(is.length);
 
                 measurements.add(m);
-
-                System.out.print ("Sort completed: \n");
-                System.out.printf("     - Sample Size : %d\n", m.getSampleSize());
-                System.out.printf("     - Sorter      : %s\n", m.getSorterName());
-                System.out.printf("     - Time        : %d\n", m.getTime());
-                System.out.printf("     - Memory Usage: %d\n", m.getMemory());
-                System.out.printf("     - Iterations  : %d\n", m.getIterations());
-                System.out.printf("     - Comparisons : %d\n", m.getComparisons());
             }
         }
 
         return measurements;
+    }
+
+    private void printProgress(int iter, int total) {
+        int progressLength = Math.min(total * 4, 100);
+
+        int progress = progressLength / total * iter;
+        double progressInCent = 100f / progressLength * progress;
+        System.out.printf("\rTesting Sorters: [%s%s] %.0f%%",
+                "=".repeat(progress),
+                " ".repeat(progressLength - progress),
+                progressInCent
+        );
     }
 
     private ArrayList<Sorter> createSorters() {
