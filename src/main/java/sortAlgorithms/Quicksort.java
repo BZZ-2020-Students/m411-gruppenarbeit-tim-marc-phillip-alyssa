@@ -75,19 +75,19 @@ public class Quicksort implements Sorter {
      */
     private int teile(int[] arr, int links, int rechts) {
         int i = links;
-        // Starte mit j links vom Pivotelement
+        // Start with j to the left of the pivot element
         int j = rechts - 1;
         int pivot = arr[rechts];
 
         measure.increaseComparisons();
-        while (i < j) { // solange i an j nicht vorbeigelaufen ist
-            // Suche von links ein Element, welches größer oder gleich dem Pivotelement ist
+        while (i < j) { // as long as i has not passed j
+            // Search from the left for an element that is greater than or equal to the pivot element
             measure.increaseComparisons();
             while (i < rechts && arr[i] < pivot) {
                 i = i + 1;
             }
 
-            // Suche von rechts ein Element, welches kleiner als das Pivotelement ist
+            // Search from the right for an element that is smaller than the pivot element
             measure.increaseComparisons();
             while (j > links && arr[j] >= pivot) {
                 j = j - 1;
@@ -99,8 +99,8 @@ public class Quicksort implements Sorter {
             }
         }
 
-        // Tausche Pivotelement (daten[rechts]) mit neuer endgültiger Position (daten[i])
-        // und gib die neue Position des Pivotelements zurück, beende Durchlauf
+        // Swap pivot element (data[right]) with new final position (data[i])
+        // and return the new position of the pivot element, finish run
         measure.increaseComparisons();
         if (arr[i] > pivot) {
             swap(arr, i, rechts);
