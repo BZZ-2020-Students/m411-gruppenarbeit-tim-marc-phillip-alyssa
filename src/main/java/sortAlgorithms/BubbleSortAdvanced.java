@@ -5,7 +5,7 @@ import util.Time;
 
 /**
  * Bubblesort implementation to sort an array of ints
- * This implementation is done with a while loop and a boolean flag, which should run faster with bigger amounts of datas
+ * This implementation is done with a while loop and a boolean flag, which should run faster with bigger amounts of data
  *
  * @author Tim Irmler
  * @version 1.0

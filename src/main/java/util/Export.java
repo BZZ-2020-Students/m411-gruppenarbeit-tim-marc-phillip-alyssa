@@ -1,9 +1,9 @@
 package util;
 
 /**
- * Dataclass for exporting
+ * Dataclass for exporting statistics
  *
- * @author Phillip William Jerebic
+ * @author Phillip Jerebic
  * @version 1.0
  * @since 04-01-2022
  */

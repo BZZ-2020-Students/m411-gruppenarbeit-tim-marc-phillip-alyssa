@@ -7,7 +7,8 @@ import java.time.Instant;
 import java.time.temporal.ChronoUnit;
 
 /**
- * Bubble Sort Algorithmus
+ * Bubble Sort Algorithm
+ * Sorts adjacent elements in an array one by one until it is sorted
  *
  * @author Alyssa Heimlicher
  * @version 1.0

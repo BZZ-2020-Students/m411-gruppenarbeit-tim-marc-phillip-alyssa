@@ -10,5 +10,11 @@ import util.Measurement;
  * @since 04-01-2022
  */
 public interface Sorter {
+    /**
+     * Sorts an array and returns statistics
+     *
+     * @param array array to be sorted
+     * @return statistics about the sort
+     */
     Measurement sort(int[] array);
 }

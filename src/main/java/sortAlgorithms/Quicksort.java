@@ -1,9 +1,10 @@
 package sortAlgorithms;
 
 /**
- * Dataclass to track the performance of sorting algorithms
+ * Quicksort algorithm
+ * An implementation of the quicksort algorithm in
  *
- * @author Phillip William Jerebic
+ * @author Phillip Jerebic
  * @version 1.0
  * @since 04-01-2022
  */
@@ -15,6 +16,7 @@ import util.Time;
 // TODO: 04.01.2022 get memory usage
 public class Quicksort implements Sorter {
     Measurement measure = new Measurement();
+
     /**
      * Override Measurement
      */
@@ -33,12 +35,26 @@ public class Quicksort implements Sorter {
         return measure;
     }
 
+    /**
+     * Swaps the two given indexes in the given array.
+     *
+     * @param array the array where the elements are to be swapped
+     * @param a     left index
+     * @param b     right index
+     */
     private void swap(int[] array, int a, int b) {
         int temp = array[a];
         array[a] = array[b];
         array[b] = temp;
     }
 
+    /**
+     * Recursive function that sorts the given array
+     *
+     * @param arr    the array which will be sorted
+     * @param links  left boundary
+     * @param rechts right boundary
+     */
     private void sort(int[] arr, int links, int rechts) {
         measure.increaseIterations();
         measure.increaseComparisons();
@@ -49,6 +65,14 @@ public class Quicksort implements Sorter {
         }
     }
 
+    /**
+     * Splits the given array into left and right depending on the pivot
+     *
+     * @param arr    given array to be split
+     * @param links  left boundary
+     * @param rechts right boundary
+     * @return the left index
+     */
     private int teile(int[] arr, int links, int rechts) {
         int i = links;
         // Starte mit j links vom Pivotelement
