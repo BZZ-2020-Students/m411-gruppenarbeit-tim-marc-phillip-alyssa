@@ -67,11 +67,11 @@ public class Main {
                 avgMeasurements.setSampleSize(is.length);
 
                 avgMeasurements.setComparisons(
-                        (int) sorterMeasurements.stream().mapToLong(Measurement::getComparisons).average().orElse(0)
+                        (long) sorterMeasurements.stream().mapToLong(Measurement::getComparisons).average().orElse(0)
                 );
 
                 avgMeasurements.setIterations(
-                        (int) sorterMeasurements.stream().mapToLong(Measurement::getIterations).average().orElse(0)
+                        (long) sorterMeasurements.stream().mapToLong(Measurement::getIterations).average().orElse(0)
                 );
 
                 avgMeasurements.setTimeInNs(

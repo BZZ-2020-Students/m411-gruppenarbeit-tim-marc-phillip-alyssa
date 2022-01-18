@@ -11,12 +11,12 @@ public class Measurement {
     /**
      * The amount of iterations the sort took
      */
-    private int iterations;
+    private long iterations;
 
     /**
      * The amount of comparisons made in the sort
      */
-    private int comparisons;
+    private long comparisons;
 
     /**
      * The time the sort took in Ns
@@ -41,27 +41,12 @@ public class Measurement {
     /**
      * The amount of ints sorted
      */
-    private int sampleSize;
+    private long sampleSize;
 
     /**
      * Default Constructor
      */
     public Measurement() {
-    }
-
-    /**
-     * Constructor with all params
-     *
-     * @param iterations  The amount of iterations the sort took
-     * @param comparisons The amount of comparisons made in the sort
-     * @param timeInNs    The time the sort took
-     * @param memory      The amount of memory the sort used
-     */
-    public Measurement(int iterations, int comparisons, long timeInNs, int memory) {
-        this.iterations = iterations;
-        this.comparisons = comparisons;
-        this.timeInNs = timeInNs;
-        this.memory = memory;
     }
 
     @Override
@@ -80,11 +65,11 @@ public class Measurement {
         this.iterations++;
     }
 
-    public int getIterations() {
+    public long getIterations() {
         return iterations;
     }
 
-    public void setIterations(int iterations) {
+    public void setIterations(long iterations) {
         this.iterations = iterations;
     }
 
@@ -92,11 +77,11 @@ public class Measurement {
         this.comparisons++;
     }
 
-    public int getComparisons() {
+    public long getComparisons() {
         return comparisons;
     }
 
-    public void setComparisons(int comparisons) {
+    public void setComparisons(long comparisons) {
         this.comparisons = comparisons;
     }
 
@@ -124,11 +109,11 @@ public class Measurement {
         this.sorterName = sorterName;
     }
 
-    public int getSampleSize() {
+    public long getSampleSize() {
         return sampleSize;
     }
 
-    public void setSampleSize(int sampleSize) {
+    public void setSampleSize(long sampleSize) {
         this.sampleSize = sampleSize;
     }
 
