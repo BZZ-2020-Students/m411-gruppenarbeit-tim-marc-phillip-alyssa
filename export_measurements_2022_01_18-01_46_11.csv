@@ -1,0 +1,16 @@
+,sortername,samplesize,iterations,comparisons,timeInNs,timeInMs,memory
+Samplesize:100
+,BubbleSort,100,9702,9702,22'750 ns,0 ms,0
+,BubbleSortAdvanced,100,6435,6435,26'500 ns,0 ms,0
+,Quicksort,100,167000,795000,4'620 ns,0 ms,0
+,TreeSort,100,1974000,3647000,42'750 ns,0 ms,0
+Samplesize:1000
+,BubbleSort,1000,997002,997002,680'809 ns,0 ms,0
+,BubbleSortAdvanced,1000,999000,999000,966'844 ns,0 ms,0
+,Quicksort,1000,1857000,8561000,48'658 ns,0 ms,0
+,TreeSort,1000,157830000,312659000,783'389 ns,0 ms,0
+Samplesize:10
+,BubbleSort,10,72,72,115 ns,0 ms,0
+,BubbleSortAdvanced,10,36,36,75 ns,0 ms,0
+,Quicksort,10,13000,46000,112 ns,0 ms,0
+,TreeSort,10,68000,105000,212 ns,0 ms,0

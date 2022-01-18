@@ -10,7 +10,7 @@ import java.util.Scanner;
 
 public class Main {
     private final static int SORTER_COUNT = 4;
-    private final static int SORTER_ITERATIONS = 10;
+    private final static int SORTER_ITERATIONS = 1000;
 
     public static void main(String[] args) {
         System.out.print("Please ensure that all input samples are in the \"resources/inputfiles\" folder (enter 'y' to continue) > ");
@@ -97,11 +97,11 @@ public class Main {
     private void printProgress(int iter, int total) {
         int progressLength = Math.min(total * 4, 120);
 
-        int progress = progressLength / total * iter;
+        double progress = (double) progressLength / (double) total * iter;
         double progressInCent = 100f / progressLength * progress;
         System.out.printf("\rTesting Sorters: [%s%s] %.0f%%",
-                "=".repeat(progress),
-                " ".repeat(progressLength - progress),
+                "=".repeat((int) progress),
+                " ".repeat((int) (progressLength - progress)),
                 progressInCent
         );
     }
