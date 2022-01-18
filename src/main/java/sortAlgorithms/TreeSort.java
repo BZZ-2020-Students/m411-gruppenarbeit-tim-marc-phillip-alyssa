@@ -15,7 +15,6 @@ public class TreeSort implements Sorter {
     int index = 0;
     Measurement measure = new Measurement();
 
-
     public TreeSort() {
         root = null;
     }
@@ -70,7 +69,7 @@ public class TreeSort implements Sorter {
         putInOrder(this.root, array);
 
         measure.setTime(Time.calculateElapsed(time));
-        measure.setMemory((runtime.totalMemory() - runtime.freeMemory())-usedMemoryBefore);
+        measure.setMemory((runtime.totalMemory() - runtime.freeMemory()) - usedMemoryBefore);
 
         return measure;
     }
