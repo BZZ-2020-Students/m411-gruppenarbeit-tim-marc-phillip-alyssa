@@ -32,9 +32,9 @@ public class Export {
 
         writer.append(",sortername,samplesize,iterations,comparisons,timeInNs,timeInMs,memory\n");
 
-        int[] samplesizes = data.stream().mapToInt(Measurement::getSampleSize).distinct().toArray();
+        long[] samplesizes = data.stream().mapToLong(Measurement::getSampleSize).distinct().toArray();
 
-        for (int ss : samplesizes) {
+        for (long ss : samplesizes) {
             writer.append("Samplesize:").append(String.valueOf(ss)).append("\n");
             data.stream().filter(measurement -> measurement.getSampleSize() == ss)
                     .forEach(m -> {
