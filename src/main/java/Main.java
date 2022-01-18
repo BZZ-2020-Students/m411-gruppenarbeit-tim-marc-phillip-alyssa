@@ -58,8 +58,6 @@ public class Main {
 
                     var m = sorter.sort(isCopy);
 
-                    m.setSorterName(sorter.getClass().getSimpleName());
-                    m.setSampleSize(is.length);
                     m.setTimeInMs(m.getTimeInNs() / 1_000_000);
 
                     sorterMeasurements.add(m);
@@ -87,7 +85,7 @@ public class Main {
                 );
 
                 avgMeasurements.setTimeInMs(
-                        (long) sorterMeasurements.stream().mapToLong(Measurement::getMemory).average().orElse(0)
+                        (long) sorterMeasurements.stream().mapToLong(Measurement::getTimeInMs).average().orElse(0)
                 );
 
 
