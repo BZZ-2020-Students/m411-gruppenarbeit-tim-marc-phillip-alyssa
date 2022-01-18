@@ -83,4 +83,9 @@ public class TreeSort implements Sorter {
             left = right = null;
         }
     }
+
+    public void reset() {
+        this.root = null;
+        this.index = 0;
+    }
 }

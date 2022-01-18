@@ -38,4 +38,8 @@ public class BubbleSort implements Sorter {
 
         return measure;
     }
+
+    @Override
+    public void reset() {
+    }
 }

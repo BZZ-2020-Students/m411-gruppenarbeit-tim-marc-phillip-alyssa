@@ -1,5 +1,10 @@
 package sortAlgorithms;
 
+
+
+import util.Measurement;
+import util.Time;
+
 /**
  * Quicksort algorithm
  * An implementation of the quicksort algorithm in
@@ -8,11 +13,6 @@ package sortAlgorithms;
  * @version 1.0
  * @since 04-01-2022
  */
-
-import util.Measurement;
-import util.Time;
-
-
 // TODO: 04.01.2022 get memory usage
 public class Quicksort implements Sorter {
     Measurement measure = new Measurement();
@@ -33,6 +33,10 @@ public class Quicksort implements Sorter {
         measure.setMemory((runtime.totalMemory() - runtime.freeMemory()) - usedMemoryBefore);
 
         return measure;
+    }
+
+    @Override
+    public void reset() {
     }
 
     /**

@@ -9,6 +9,9 @@ import java.util.Arrays;
 import java.util.Scanner;
 
 public class Main {
+    private final static int SORTER_COUNT = 4;
+    private final static int SORTER_ITERATIONS = 10;
+
     public static void main(String[] args) {
         System.out.print("Please ensure that all input samples are in the \"resources/inputfiles\" folder (enter 'y' to continue) > ");
 
@@ -38,23 +41,57 @@ public class Main {
         var measurements = new ArrayList<Measurement>();
 
         int iter = 0;
-        int totalIters = inputsamples.length * 4;
+        int totalIters = inputsamples.length * SORTER_COUNT * SORTER_ITERATIONS;
 
         for (int[] is : inputsamples) {
             var sorters = createSorters();
 
             for (var sorter : sorters) {
-                iter++;
-                printProgress(iter, totalIters);
-                var isCopy = Arrays.copyOf(is, is.length);
+                var sorterMeasurements = new ArrayList<Measurement>();
+                for (int i = 0; i < SORTER_ITERATIONS; i++) {
+                    iter++;
+                    printProgress(iter, totalIters);
 
-                var m = sorter.sort(isCopy);
+                    sorter.reset();
 
-                m.setSorterName(sorter.getClass().getSimpleName());
-                m.setSampleSize(is.length);
-                m.setTimeInMs(m.getTimeInNs() / 1_000_000);
+                    var isCopy = Arrays.copyOf(is, is.length);
 
-                measurements.add(m);
+                    var m = sorter.sort(isCopy);
+
+                    m.setSorterName(sorter.getClass().getSimpleName());
+                    m.setSampleSize(is.length);
+                    m.setTimeInMs(m.getTimeInNs() / 1_000_000);
+
+                    sorterMeasurements.add(m);
+                }
+
+                var avgMeasurements = new Measurement();
+
+                avgMeasurements.setSorterName(sorter.getClass().getSimpleName());
+                avgMeasurements.setSampleSize(is.length);
+
+                avgMeasurements.setComparisons(
+                        (int) sorterMeasurements.stream().mapToLong(Measurement::getComparisons).average().orElse(0)
+                );
+
+                avgMeasurements.setIterations(
+                        (int) sorterMeasurements.stream().mapToLong(Measurement::getIterations).average().orElse(0)
+                );
+
+                avgMeasurements.setTimeInNs(
+                        (long) sorterMeasurements.stream().mapToLong(Measurement::getTimeInNs).average().orElse(0)
+                );
+
+                avgMeasurements.setMemory(
+                        (long) sorterMeasurements.stream().mapToLong(Measurement::getMemory).average().orElse(0)
+                );
+
+                avgMeasurements.setTimeInMs(
+                        (long) sorterMeasurements.stream().mapToLong(Measurement::getMemory).average().orElse(0)
+                );
+
+
+                measurements.add(avgMeasurements);
             }
         }
 
@@ -62,7 +99,7 @@ public class Main {
     }
 
     private void printProgress(int iter, int total) {
-        int progressLength = Math.min(total * 4, 100);
+        int progressLength = Math.min(total * 4, 120);
 
         int progress = progressLength / total * iter;
         double progressInCent = 100f / progressLength * progress;

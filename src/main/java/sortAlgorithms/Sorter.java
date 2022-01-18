@@ -17,4 +17,5 @@ public interface Sorter {
      * @return statistics about the sort
      */
     Measurement sort(int[] array);
+    void reset();
 }
