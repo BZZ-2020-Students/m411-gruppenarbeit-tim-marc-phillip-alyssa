@@ -10,7 +10,7 @@ import java.util.Scanner;
 
 public class Main {
     private final static int SORTER_COUNT = 4;
-    private final static int SORTER_ITERATIONS = 10_000;
+    private final static int SORTER_ITERATIONS = 10;
 
     public static void main(String[] args) {
         System.out.print("Please ensure that all input samples are in the \"resources/inputfiles\" folder (enter 'y' to continue) > ");
