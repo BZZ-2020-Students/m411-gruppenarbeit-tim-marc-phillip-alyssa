@@ -19,9 +19,14 @@ public class Measurement {
     private int comparisons;
 
     /**
-     * The time the sort took
+     * The time the sort took in Ns
      */
-    private long time;
+    private long timeInNs;
+
+    /**
+     * The time the sort took in Ms
+     */
+    private long timeInMs;
 
     /**
      * The amount of memory the sort used
@@ -44,31 +49,31 @@ public class Measurement {
     public Measurement() {
     }
 
-    @Override
-    public String toString() {
-        return "Measurement{" +
-                "iterations=" + iterations +
-                ", comparisons=" + comparisons +
-                ", time=" + time +
-                ", memory=" + memory +
-                ", sorterName='" + sorterName + '\'' +
-                ", sampleSize=" + sampleSize +
-                '}';
-    }
-
     /**
      * Constructor with all params
      *
      * @param iterations  The amount of iterations the sort took
      * @param comparisons The amount of comparisons made in the sort
-     * @param time        The time the sort took
+     * @param timeInNs    The time the sort took
      * @param memory      The amount of memory the sort used
      */
-    public Measurement(int iterations, int comparisons, long time, int memory) {
+    public Measurement(int iterations, int comparisons, long timeInNs, int memory) {
         this.iterations = iterations;
         this.comparisons = comparisons;
-        this.time = time;
+        this.timeInNs = timeInNs;
         this.memory = memory;
+    }
+
+    @Override
+    public String toString() {
+        return "Measurement{" +
+                "iterations=" + iterations +
+                ", comparisons=" + comparisons +
+                ", time=" + timeInNs +
+                ", memory=" + memory +
+                ", sorterName='" + sorterName + '\'' +
+                ", sampleSize=" + sampleSize +
+                '}';
     }
 
     public void increaseIterations() {
@@ -95,12 +100,12 @@ public class Measurement {
         this.comparisons = comparisons;
     }
 
-    public long getTime() {
-        return time;
+    public long getTimeInNs() {
+        return timeInNs;
     }
 
-    public void setTime(long time) {
-        this.time = time;
+    public void setTimeInNs(long timeInNs) {
+        this.timeInNs = timeInNs;
     }
 
     public long getMemory() {
@@ -127,4 +132,11 @@ public class Measurement {
         this.sampleSize = sampleSize;
     }
 
+    public long getTimeInMs() {
+        return timeInMs;
+    }
+
+    public void setTimeInMs(long timeInMs) {
+        this.timeInMs = timeInMs;
+    }
 }

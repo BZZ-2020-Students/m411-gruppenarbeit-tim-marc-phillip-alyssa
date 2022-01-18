@@ -3,9 +3,6 @@ package sortAlgorithms;
 import util.Measurement;
 import util.Time;
 
-import java.time.Instant;
-import java.time.temporal.ChronoUnit;
-
 /**
  * Bubble Sort Algorithm
  * Sorts adjacent elements in an array one by one until it is sorted
@@ -36,7 +33,7 @@ public class BubbleSort implements Sorter {
             }
         }
 
-        measure.setTime(Time.calculateElapsed(time));
+        measure.setTimeInNs(Time.calculateElapsed(time));
         measure.setMemory((runtime.totalMemory() - runtime.freeMemory())-usedMemoryBefore);
 
         return measure;

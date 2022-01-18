@@ -29,7 +29,7 @@ public class Quicksort implements Sorter {
 
         sort(array, 0, array.length - 1);
 
-        measure.setTime(Time.calculateElapsed(time));
+        measure.setTimeInNs(Time.calculateElapsed(time));
         measure.setMemory((runtime.totalMemory() - runtime.freeMemory()) - usedMemoryBefore);
 
         return measure;

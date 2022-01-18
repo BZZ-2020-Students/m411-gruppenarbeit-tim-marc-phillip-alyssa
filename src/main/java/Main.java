@@ -52,6 +52,7 @@ public class Main {
 
                 m.setSorterName(sorter.getClass().getSimpleName());
                 m.setSampleSize(is.length);
+                m.setTimeInMs(m.getTimeInNs() / 1_000_000);
 
                 measurements.add(m);
             }

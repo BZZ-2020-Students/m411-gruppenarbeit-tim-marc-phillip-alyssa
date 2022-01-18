@@ -30,7 +30,7 @@ public class Export {
 
         FileWriter writer = new FileWriter(file);
 
-        writer.append(",sortername,samplesize,iterations,comparisons,time,memory\n");
+        writer.append(",sortername,samplesize,iterations,comparisons,timeInNs,timeInMs,memory\n");
 
         int[] samplesizes = data.stream().mapToInt(Measurement::getSampleSize).distinct().toArray();
 
@@ -39,7 +39,7 @@ public class Export {
             data.stream().filter(measurement -> measurement.getSampleSize() == ss)
                     .forEach(m -> {
                         try {
-                            writer.append(String.format(",%s,%s,%s,%s,%s ns,%s\n", m.getSorterName(), m.getSampleSize(), m.getIterations(), m.getComparisons(), String.format("%,d", m.getTime()).replace(",", "'"), m.getMemory()));
+                            writer.append(String.format(",%s,%s,%s,%s,%s ns,%s ms,%s\n", m.getSorterName(), m.getSampleSize(), m.getIterations(), m.getComparisons(), String.format("%,d", m.getTimeInNs()).replace(",", "'"),String.format("%,d", m.getTimeInMs()), m.getMemory()));
                             writer.flush();
                         } catch (IOException e) {
                             e.printStackTrace();

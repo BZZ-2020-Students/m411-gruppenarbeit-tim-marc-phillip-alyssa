@@ -68,7 +68,7 @@ public class TreeSort implements Sorter {
         insertEverything(array);
         putInOrder(this.root, array);
 
-        measure.setTime(Time.calculateElapsed(time));
+        measure.setTimeInNs(Time.calculateElapsed(time));
         measure.setMemory((runtime.totalMemory() - runtime.freeMemory()) - usedMemoryBefore);
 
         return measure;
