@@ -6,6 +6,6 @@ public class Time {
     }
 
     public static long calculateElapsed(long a) {
-        return System.nanoTime() - a;
+        return currentTime() - a;
     }
 }
