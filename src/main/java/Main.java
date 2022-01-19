@@ -82,11 +82,6 @@ public class Main {
                         (long) sorterMeasurements.stream().mapToLong(Measurement::getMemory).average().orElse(0)
                 );
 
-                avgMeasurements.setTimeInMs(
-                        (long) sorterMeasurements.stream().mapToLong(Measurement::getTimeInNs).average().orElse(0) / 1_000_000
-                );
-
-
                 measurements.add(avgMeasurements);
             }
         }
@@ -104,6 +99,9 @@ public class Main {
                 " ".repeat((int) (progressLength - progress)),
                 progressInCent
         );
+
+        if (iter == total)
+            System.out.println();
     }
 
     private ArrayList<Sorter> createSorters() {

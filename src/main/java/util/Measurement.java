@@ -24,11 +24,6 @@ public class Measurement {
     private long timeInNs;
 
     /**
-     * The time the sort took in Ms
-     */
-    private long timeInMs;
-
-    /**
      * The amount of memory the sort used
      */
     private long memory;
@@ -115,13 +110,5 @@ public class Measurement {
 
     public void setSampleSize(long sampleSize) {
         this.sampleSize = sampleSize;
-    }
-
-    public long getTimeInMs() {
-        return timeInMs;
-    }
-
-    public void setTimeInMs(long timeInMs) {
-        this.timeInMs = timeInMs;
     }
 }
