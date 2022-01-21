@@ -4,12 +4,18 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.net.URISyntaxException;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
-import java.util.stream.Collectors;
 
+/**
+ * Class to read input files to sort
+ */
 public class InputReader {
+    /**
+     * Gets the resources/inputfiles folder and gets its children files
+     *
+     * @return a list of all files in the resources/inputfiles folder
+     */
     private static File[] listFiles() {
         File folder = null;
         try {
@@ -22,6 +28,11 @@ public class InputReader {
         return folder.listFiles();
     }
 
+    /**
+     * Function to get the content of all the files in the folder
+     *
+     * @return and array of int arrays
+     */
     public static int[][] getFileContent() {
         File[] files = listFiles();
 
@@ -36,6 +47,12 @@ public class InputReader {
         return out;
     }
 
+    /**
+     * Parses a list of Strings to an Integer Array
+     *
+     * @param f the list to parse
+     * @return the parsed int array
+     */
     private static int[] parseFileContent(List<String> f) {
         return f.stream().mapToInt(Integer::parseInt).toArray();
     }

@@ -56,6 +56,9 @@ public class Measurement {
                 '}';
     }
 
+    /**
+     * Increase iterations by 1
+     */
     public void increaseIterations() {
         this.iterations++;
     }
@@ -68,6 +71,9 @@ public class Measurement {
         this.iterations = iterations;
     }
 
+    /**
+     * Increase comparisons by 1
+     */
     public void increaseComparisons() {
         this.comparisons++;
     }

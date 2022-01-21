@@ -12,6 +12,13 @@ import util.Time;
  * @since 04-01-2022
  */
 public class BubbleSortAdvanced implements Sorter {
+
+    /**
+     * Function which needs to be called to sort an int array
+     *
+     * @param array array to be sorted
+     * @return an instance of {@link Measurement} with the test stats
+     */
     @Override
     public Measurement sort(int[] array) {
         var measure = new Measurement();

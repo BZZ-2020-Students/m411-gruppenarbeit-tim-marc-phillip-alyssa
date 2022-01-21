@@ -13,6 +13,13 @@ import util.Time;
  */
 
 public class BubbleSort implements Sorter {
+
+    /**
+     * Function which needs to be called to sort an int array
+     *
+     * @param array array to be sorted
+     * @return an instance of {@link Measurement} with the test stats
+     */
     @Override
     public Measurement sort(int[] array) {
         var measure = new Measurement();
@@ -34,11 +41,15 @@ public class BubbleSort implements Sorter {
         }
 
         measure.setTimeInNs(Time.calculateElapsed(time));
-        measure.setMemory((runtime.totalMemory() - runtime.freeMemory())-usedMemoryBefore);
+        measure.setMemory((runtime.totalMemory() - runtime.freeMemory()) - usedMemoryBefore);
 
         return measure;
     }
 
+    /**
+     * Implements the reset method
+     * Has no use for this sorter
+     */
     @Override
     public void reset() {
     }

@@ -17,5 +17,9 @@ public interface Sorter {
      * @return statistics about the sort
      */
     Measurement sort(int[] array);
+
+    /**
+     * Used to reset sorter for example if instance has variables which need to be reset after sorting
+     */
     void reset();
 }
