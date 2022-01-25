@@ -74,6 +74,11 @@ public class TreeSort implements Sorter {
         return measure;
     }
 
+    public void reset() {
+        this.root = null;
+        this.index = 0;
+    }
+
     private static class Node {
         int key;
         Node left, right;
@@ -82,10 +87,5 @@ public class TreeSort implements Sorter {
             key = item;
             left = right = null;
         }
-    }
-
-    public void reset() {
-        this.root = null;
-        this.index = 0;
     }
 }
