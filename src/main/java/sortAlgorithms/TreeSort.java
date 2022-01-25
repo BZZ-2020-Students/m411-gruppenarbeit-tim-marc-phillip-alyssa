@@ -77,6 +77,7 @@ public class TreeSort implements Sorter {
     public void reset() {
         this.root = null;
         this.index = 0;
+        measure = new Measurement();
     }
 
     private static class Node {

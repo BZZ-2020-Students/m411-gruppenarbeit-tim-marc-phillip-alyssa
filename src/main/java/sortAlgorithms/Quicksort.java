@@ -37,6 +37,7 @@ public class Quicksort implements Sorter {
 
     @Override
     public void reset() {
+        measure = new Measurement();
     }
 
     /**
